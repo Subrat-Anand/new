@@ -1,0 +1,61 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container ul {
+    list-style: none;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+    width: 100%;
+    max-width: 750px;
+
+}
+
+.container ul li {
+    padding: 1rem;
+    /* width: 100%; */
+}
+
+.container ul label {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1%;
+}
+
+.container ul label::after {
+    content: "+";
+    position: absolute;
+    right: 400px;
+    font-size: 22px;
+    font-weight: 600;
+    color: azure;
+    transition: transform 0.5s;
+}
+
+.container ul input {
+    display: none;
+}
+
+.container ul .content {
+  max-height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+
+ul li input:checked + label + .content {
+    max-height: 100px;
+    padding: 20px 20px;
+}
+
+ul input:checked + label::after {
+    transform: rotate(135deg);
+}
